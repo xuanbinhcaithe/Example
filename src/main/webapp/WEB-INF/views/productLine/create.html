@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create ProductLine</title>
+</head>
+<body>
+    <h1>Create productLine</h1>
+    <th:block th:if="${ms}">
+        <p th:text="${ms}"></p>
+    </th:block>
+    <form action="/create-productLine" th:object="${productLine}" method="post">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
